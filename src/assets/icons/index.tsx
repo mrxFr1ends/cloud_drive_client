@@ -10,3 +10,4 @@ export {ReactComponent as FileIcon} from "../../assets/icons/file.svg";
 export {ReactComponent as FolderIcon} from "../../assets/icons/folder.svg";
 export {ReactComponent as DriveIcon} from "../../assets/icons/drive.svg";
 export {ReactComponent as RecoveryIcon} from "../../assets/icons/recovery.svg";
+export {ReactComponent as UploadCloudIcon} from "../../assets/icons/upload-cloud.svg";

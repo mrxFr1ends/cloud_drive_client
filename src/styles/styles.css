@@ -28,3 +28,11 @@ input, button {
   outline: none;
   border: none;
 }
+
+:root {
+  --opacity-slide-in: opacity-slide-in;
+}
+@keyframes opacity-slide-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

@@ -1,6 +1,6 @@
 import { useActions } from '../hooks/useActions';
 import { RegisterPayload } from '../types/auth';
-import Form from './Form';
+import Form from './AuthForm';
 
 const registerInputs = [
   {

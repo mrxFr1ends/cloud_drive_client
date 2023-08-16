@@ -9,3 +9,5 @@ export const store = configureStore({
 });
 
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+
+export const initialState = {...store.getState()};

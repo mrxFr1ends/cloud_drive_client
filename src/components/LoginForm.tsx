@@ -1,6 +1,6 @@
 import { useActions } from '../hooks/useActions';
 import { LoginPayload } from '../types/auth';
-import Form from './Form';
+import Form from './AuthForm';
 
 const loginInputs = [
   {

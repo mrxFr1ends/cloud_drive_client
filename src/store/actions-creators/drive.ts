@@ -14,12 +14,12 @@ import {
 export const getFolder = (folderId: string, filter?: string) => {
   const url = `disk/${folderId}?type=folder` + (filter ? `&filter=${filter}` : '');
   return (dispatch: Dispatch<DriveAction>) => {
+    dispatch({ type: DriveActionTypes.SET_LOADING_INFO, payload: true });
     $api
       .get<FolderInfo>(url, {
         headers: { "Content-Type": "application/json" },
       })
       .then(({ data }) => {
-        console.log(data);
         dispatch({
           type: DriveActionTypes.SET_FOLDER_INFO,
           payload: data,
@@ -27,6 +27,7 @@ export const getFolder = (folderId: string, filter?: string) => {
       })
       .catch((error: AxiosError<IApiError>) => {
         if (error.response) console.log(error);
+        dispatch({ type: DriveActionTypes.SET_LOADING_INFO, payload: false });
       });
   };
 };
@@ -57,12 +58,16 @@ export const createFolder = (name: string, parentId: string) => {
 export const uploadFiles = (uploadedFiles: FileList, folderId: string) => {
   return (dispath: Dispatch<DriveAction>) => {
     const formData = new FormData();
-    Array.from(uploadedFiles).forEach(file =>
+    Array.from(uploadedFiles).forEach(file => {
+      console.log(file.name)
       formData.append("uploadedFiles", file)
-    );
+    });
     formData.append("folderId", folderId);
     $api
       .post<UploadFilesResponse>("disk/upload/file", formData, {
+        headers: {
+          "Content-Encoding": "multipart/form-data; charset=utf-8"
+        },
         onUploadProgress: (progressEvent: AxiosProgressEvent) => {
           const totalLength = progressEvent.total;
           console.log(totalLength);

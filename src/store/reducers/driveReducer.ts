@@ -9,6 +9,7 @@ const initialState: IDriveState = {
   folder: {} as Folder,
   subfolders: [],
   files: [],
+  isLoading: false
 };
 
 export const driveReducer = (
@@ -17,7 +18,7 @@ export const driveReducer = (
 ): IDriveState => {
   switch (action.type) {
     case DriveActionTypes.SET_FOLDER_INFO:
-      return { ...action.payload };
+      return { ...action.payload, isLoading: false };
     case DriveActionTypes.ADD_FOLDER:
       return { ...state, subfolders: [...state.subfolders, action.payload] };
     case DriveActionTypes.REMOVE_FOLDER:
@@ -40,6 +41,8 @@ export const driveReducer = (
     }
     case DriveActionTypes.UPDATE_FILE:
       return { ...state, files: state.files.map(file => file._id === action.payload._id ? action.payload : file) };
+    case DriveActionTypes.SET_LOADING_INFO:
+      return { ...state, isLoading: action.payload }
     default:
       return state;
   }

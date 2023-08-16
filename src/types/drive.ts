@@ -34,7 +34,7 @@ export interface UploadFilesResponse {
   files: File[];
 }
 
-export type IDriveState = FolderInfo;
+export type IDriveState = FolderInfo & { isLoading: boolean };
 
 export enum DriveActionTypes {
   SET_FOLDER_INFO = "SET_FOLDER_INFO",
@@ -44,6 +44,7 @@ export enum DriveActionTypes {
   REMOVE_FILE = "REMOVE_FILE",
   UPDATE_FOLDER = "UPDATE_FOLDER",
   UPDATE_FILE = "UPDATE_FILE",
+  SET_LOADING_INFO = "SET_LOADING_INFO",
 }
 
 interface SetFolderInfoAction {
@@ -81,6 +82,11 @@ interface UpdateFile {
   payload: File;
 }
 
+interface SetLoadingInfo {
+  type: DriveActionTypes.SET_LOADING_INFO;
+  payload: boolean;
+}
+
 export type DriveAction =
   | SetFolderInfoAction
   | AddFolderAction
@@ -88,4 +94,5 @@ export type DriveAction =
   | AddFilesAction
   | RemoveFile
   | UpdateFolder
-  | UpdateFile;
+  | UpdateFile
+  | SetLoadingInfo;

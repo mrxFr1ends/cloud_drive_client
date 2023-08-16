@@ -1,0 +1,39 @@
+/* Style for drive main */
+.content {
+  display: flex;
+  padding: 20px 20px 20px 0;
+  height: calc(100% - 50px);
+}
+
+.left_bar {
+  flex: 1;
+}
+
+.left_bar ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.left_bar ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  font-size: 0.88rem;
+}
+.left_bar ul li:not(:first-child) {
+  margin-top: 5px;
+}
+.select a,
+.left_bar ul li:hover a {
+  background-color: rgb(var(--color-grey));
+}
+
+.left_bar ul li svg {
+  width: 20px;
+  stroke: rgb(var(--color-white));
+}

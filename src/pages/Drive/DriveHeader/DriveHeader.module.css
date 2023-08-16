@@ -1,0 +1,80 @@
+/* Style for header */
+.header {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr;
+  justify-items: center;
+  background-color: rgb(var(--color-light-black));
+  align-items: center;
+  padding: 7px 5px;
+  height: 50px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* Style for left block in header */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-right: auto;
+  grid-column-start: 1;
+}
+.upload_btn {
+  padding: 0;
+}
+.upload_btn input {
+  display: none;
+}
+.upload_btn label {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Style for center block in header */
+.search {
+  height: 100%;
+  width: 100%;
+  grid-column-start: 2;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search > label {
+  position: absolute;
+  left: 5px;
+  top: calc(50% - 10px);
+}
+.search > input {
+  background-color: transparent;
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 4px;
+  padding: 5px 5px 5px 30px;
+  height: 100%;
+  background-color: rgb(var(--color-black));
+  border: 1px solid transparent;
+  color: rgb(var(--color-input));
+}
+.search > label > svg {
+  width: 20px;
+  height: 20px;
+  stroke: rgb(var(--color-input));
+}
+.search > input:focus {
+  border-color: rgb(var(--color-light-grey));
+}
+
+/* Style for right block in header */
+.user {
+  grid-column-start: 3;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 10px;
+}
+.username {
+  cursor: default;
+  color: rgb(var(--color-white));
+}

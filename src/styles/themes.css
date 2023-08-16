@@ -1,0 +1,32 @@
+html[data-theme='dark'] {
+  --color-black: 28, 30, 31;
+  --color-light-black: 42, 41, 41;
+  --color-grey: 61, 61, 61;
+  --color-light-grey: 149, 147, 147;
+  --color-white: 225, 224, 224;
+
+  --color-red: 251, 68, 78;
+  --color-input: var(--color-white);
+}
+
+html[data-theme='light'] {
+  --color-black: 242, 241, 241;
+  --color-light-black: 227, 228, 228;
+  --color-grey: 194, 194, 194;
+  --color-light-grey: 106, 108, 108;
+  --color-white: 81, 80, 80;
+
+  --color-red: 251, 68, 78;
+  --color-input: var(--color-white);
+}
+
+html[data-theme="light-test"] {
+  --color-black: 242, 241, 241;
+  --color-light-black: 106, 176, 237;
+  --color-grey: rgba(0, 0, 0, 0.122);
+  --color-light-grey: 106, 108, 108;
+  --color-white: 255, 255, 255;
+
+  --color-red: 251, 68, 78;
+  --color-input: 0, 0, 0, 0.807;
+}

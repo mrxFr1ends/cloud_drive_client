@@ -26,12 +26,15 @@ export interface IAuthState {
   token: string | null;
   user: IUser | null;
   error: IApiError | null;
+  isLoading: boolean;
 }
 
 export enum AuthActionTypes {
   AUTH_SUCCESS = "AUTH_SUCCESS",
   AUTH_FAILURE = "AUTH_FAILURE",
   AUTH_LOGOUT = "AUTH_LOGOUT",
+  CLEAR_ERROR = "CLEAR_ERROR",
+  SET_ERROR_MESSAGE = "SET_ERROR_MESSAGE",
 }
 
 interface AuthSuccessAction {
@@ -41,14 +44,25 @@ interface AuthSuccessAction {
 
 interface AuthFailureAction {
   type: AuthActionTypes.AUTH_FAILURE;
-  payload: IApiError;
+  payload: IApiError | null;
 }
 
-interface AuthLogoutAction {
+interface AuthLogoutAction { 
   type: AuthActionTypes.AUTH_LOGOUT;
+}
+
+interface ClearErrorAction {
+  type: AuthActionTypes.CLEAR_ERROR;
+}
+
+interface SetErrorMessageAction {
+  type: AuthActionTypes.SET_ERROR_MESSAGE;
+  payload: string;
 }
 
 export type AuthAction =
   | AuthSuccessAction
   | AuthFailureAction
-  | AuthLogoutAction;
+  | AuthLogoutAction
+  | ClearErrorAction
+  | SetErrorMessageAction;

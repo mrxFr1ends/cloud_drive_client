@@ -18,8 +18,8 @@ const loginInputs = [
 const LoginForm = () => {
   const { login } = useActions();
   const defaultState: LoginPayload = {
-    login: "normalUsername",
-    password: "Password123!"
+    login: "",
+    password: ""
   };
 
   return (

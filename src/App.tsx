@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Loader from "./components/Loader/Loader";
 import { useActions } from "./hooks/useActions";
 import Auth from "./pages/Auth/Auth";
 import Drive from "./pages/Drive/Drive";

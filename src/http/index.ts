@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const API_URL = "http://localhost:5000/api";
+export const API_URL = "https://cloud-drive-w6h8.onrender.com/api";
 
 export const $api = axios.create({
   baseURL: API_URL,

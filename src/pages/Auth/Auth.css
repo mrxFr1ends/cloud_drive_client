@@ -1,17 +1,16 @@
 .auth-form input, 
 .auth-form button {
   /* background-color: rgb(59, 59, 59); */
-  background-color: rgb(var(--color-grey));
-  border: 1px solid rgb(var(--color-light-grey));
+  background-color: rgb(var(--color-black));
   outline: none;
   border-radius: 4px;
+  border: 1px solid transparent;
   padding: 10px;
 }
-.auth-form input:focus, 
-.auth-form input:hover, 
-.auth-form button:focus, 
-.auth-form button:hover {
-  background-color: rgb(var(--color-light-black));
+.auth-form input:focus,
+.auth-form button:hover,
+.auth-form button:focus {
+  border-color: rgb(var(--color-light-grey));
 }
 
 .auth-form-wrapper {
@@ -28,6 +27,7 @@
   display: flex;
   flex-direction: column;
   border: 1px solid rgb(var(--color-light-grey));
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
 }
 
 .auth-form-header {
@@ -51,13 +51,12 @@
 }
 
 .auth-form-header div:not(.selected):hover {
-  background-color: rgb(var(--color-light-black));
   cursor: pointer;
 }
 
 .auth-form-header div:not(.selected) {
   border-bottom: 1px solid rgb(var(--color-light-grey));
-  background-color: rgb(var(--color-grey));
+  background-color: rgb(var(--color-black));
 }
 
 .auth-form {
